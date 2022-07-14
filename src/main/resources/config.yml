@@ -1,0 +1,7 @@
+#Update time as ticks (20 ticks = 1 second
+update-time: 2
+
+messages:
+  no-permission: "&cYou don't have permission to use this command."
+  disable-armor: "&eYou have disabled your armor."
+  enable-armor: "&aYou have enabled your armor."

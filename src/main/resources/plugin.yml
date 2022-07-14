@@ -1,0 +1,6 @@
+name: 'ColoredArmors'
+author: 'caandalek'
+description: 'Colored armors for players.'
+version: 0.0.4
+api-version: 1.18
+main: com.furkan.coloredarmors.ColoredArmorsPlugin
