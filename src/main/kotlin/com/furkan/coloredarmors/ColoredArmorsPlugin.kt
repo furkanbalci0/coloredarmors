@@ -1,21 +1,23 @@
 package com.furkan.coloredarmors
 
 import com.furkan.coloredarmors.command.CommandManager
+import com.furkan.coloredarmors.tasks.TaskManager
 import com.hakan.core.HCore
 import com.hakan.core.utils.yaml.HYaml
 import org.bukkit.plugin.java.JavaPlugin
-import com.furkan.coloredarmors.data.DataManager
-import com.furkan.coloredarmors.tasks.TaskManager
 import java.io.File
 
 class ColoredArmorsPlugin : JavaPlugin() {
 
     companion object {
         lateinit var yaml: HYaml
+        lateinit var INSTANCE: ColoredArmorsPlugin
     }
 
     override fun onEnable() {
         super.onEnable()
+
+        INSTANCE = this
 
         //HCore initialization.
         HCore.initialize(this)
@@ -30,10 +32,8 @@ class ColoredArmorsPlugin : JavaPlugin() {
 
         //Register managers.
         TaskManager.initialize()
-        DataManager.initialize()
 
         //Register commands.
         HCore.registerCommands(CommandManager())
-
     }
 }

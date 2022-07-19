@@ -35,17 +35,16 @@ class TaskManager {
 
                     val player: Player? = Bukkit.getPlayer(uuid)
 
-                    //If player is in players, remove him from players.
+                    //If player is leaves the server, remove him from players list.
                     if (player == null) {
                         players.remove(uuid)
                         continue
                     }
 
                     for (itemStack: ItemStack in player.inventory.armorContents) {
-
                         val material: Material = itemStack.type
                         if (material == Material.AIR) continue
-                        if ((itemStack.itemMeta is LeatherArmorMeta)) continue
+                        if (itemStack.itemMeta !is LeatherArmorMeta) continue
 
                         val meta: LeatherArmorMeta = itemStack.itemMeta as LeatherArmorMeta
 
@@ -55,7 +54,6 @@ class TaskManager {
                             Random.nextInt(0, 255),
                             Random.nextInt(0, 255)
                         )
-
                         itemStack.itemMeta = meta
 
                         //Set item.
@@ -66,6 +64,8 @@ class TaskManager {
                             Material.LEATHER_HELMET -> player.inventory.helmet = itemStack
                             else -> {}
                         }
+
+                        player.updateInventory()
                     }
                 }
             }

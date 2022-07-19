@@ -5,13 +5,6 @@ import java.util.*
 class DataManager {
 
     companion object {
-        var players: MutableSet<UUID> = TODO()
-            get() {
-                return field.toMutableSet()
-            }
-
-        fun initialize() {
-            players = mutableSetOf()
-        }
+        val players: MutableSet<UUID> = mutableSetOf()
     }
 }

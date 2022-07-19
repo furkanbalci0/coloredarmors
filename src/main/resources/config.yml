@@ -5,3 +5,7 @@ messages:
   no-permission: "&cYou don't have permission to use this command."
   disable-armor: "&eYou have disabled your armor."
   enable-armor: "&aYou have enabled your armor."
+
+#Sound List: https://helpch.at/docs/1.16.5/org/bukkit/Sound.html
+sounds:
+  command-usage: NOTE_PLING
